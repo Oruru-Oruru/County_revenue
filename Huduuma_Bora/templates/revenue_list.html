@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Revenue list</title>
+</head>
+<body style="background-color: green;">
+    <h1 style="text-align: center; color:blanchedalmond;">Revenue list</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>County_customer</th>
+                <th>Enterprises</th>
+                <th>Service</th>
+                <th>Amount</th>
+                <th>Payment status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for revenue in revenues %}
+            <tr>
+                <td>{{ revenue.county_customer }}</td>
+                
+                <td>{{ revenue.service }}</td>
+                <td>{{ revenue.amount }}</td>
+                <td>{{ revenue.payment_status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

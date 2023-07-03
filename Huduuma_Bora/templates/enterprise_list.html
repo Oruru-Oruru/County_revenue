@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>enterprise list</title>
+</head>
+<body style="background-color: green;">
+    <h1 style="text-align: center; color:blanchedalmond;">enterprise list</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>registration_number</th>
+                <th>Address</th>
+                <th>contact_number</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for enterprise in enterprises %}
+            <tr>
+                <td>{{ enterprise.name }}</td>
+                <td>{{ enterprise. registration_number}}</td>
+                <td>{{ enterprise.address }}</td>
+                <td>{{ enterprise.contact_number }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

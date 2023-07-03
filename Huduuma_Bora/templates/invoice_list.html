@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invoice List</title>
+</head>
+<body style="background-color: green;">
+    <h1 style="text-align: center; color:blanchedalmond;">Invoice List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Invoice Number</th>
+                <th>Customer</th>
+                <th>Amount</th>
+                <th>Issued Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for invoice in invoices %}
+            <tr>
+                <td>{{ invoice.invoice_number }}</td>
+                <td>{{ invoice.customer }}</td>
+                <td>{{ invoice.amount }}</td>
+                <td>{{ invoice.issued_date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        form{
+            height:50%;
+            background:(rgb(112, 188, 6));
+            border-radius: 10px;
+            padding:20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+        }
+        .container{
+            height:100vh;
+            width:100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border:1px solid black;
+        }
+    
+        input, select{
+            display:block;
+            margin:10px 0px;
+            width:200px;
+            border-radius: 5px;
+            height: 30px;
+            
+        }
+    
+        button{
+            margin:15px 0px;
+            width:200px;
+            border-radius: 20px;
+            cursor:pointer;
+            background:pink;
+            color: blue;
+            text-align: center;
+            padding:10px 20px;
+            
+        }
+    
+    
+        label{
+            display:block;
+            font-size: 20px;
+    
+        }
+    
+    
+    </style>
+<head>
+    <title>Revenue Defaulters</title>
+</head>
+<body style="background-color: green;">
+    <h1 style="text-align: center; color:blanchedalmond;">Revenue Defaulters</h1>
+    <table style="background-color: blue; justify-content: center; align-items: center;">
+        <thead>
+            <tr>
+                <th style="color: white;"><b>Revenue ID</b></th>
+                <th style="color: white;"><b>County Customer</b></th>
+                <th style="color: white;"><b>Enterprise</b></th>
+                <th style="color: white;"><b>Service</b></th>
+                <th style="color: white;"><b>Amount</b></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for defaulter in defaulters %}
+            <tr>
+                <td style="color: white;">{{ defaulter.id }}</td>
+                <td style="color: white;">{{ defaulter.county_customer.name }}</td>
+                <td style="color: white;">{{ defaulter.enterprise.name }}</td>
+                <td style="color: white;">{{ defaulter.service.name }}</td>
+                <td style="color: white">{{ defaulter.amount }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

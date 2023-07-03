@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    
+    
+    
+<head>
+    <title>System Report</title>
+</head>
+<body style="background-color: green;">
+    <h1 style="text-align: center; color:blanchedalmond;">System Report</h1>
+    <table style="background-color: blue; justify-content: center; align-items: center;">
+        <thead>
+            <tr>
+                
+                <th style="color: white;"><b>County Customer</b></th>
+                <th style="color: white;"><b>Enterprise</b></th>
+                <th style="color: white;"><b>Service</b></th>
+                <th style="color: white;"><b>payment_status</b></th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for report in data %}
+            <tr>
+               
+                <td style="color: white; text-size-adjust: 70px;" >{{ report.county_customer }}</td>
+                <td style="color: white; text-size-adjust: 70px;">{{ report.enterprise }}</td>
+                <td style="color: white; text-size-adjust: 70px;">{{ report.service }}</td>
+                <td style="color: white; text-size-adjust: 70px;">{{ report.payment_status }}</td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

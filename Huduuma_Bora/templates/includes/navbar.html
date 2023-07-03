@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+    
+    
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'home' %}" style="color: blue;"><b>Home</b> <span class="sr-only"></span></a>
+            </li>
+            
+        </ul>
+        
+        <div class="navbar-nav ml-auto">
+            {% if request.user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'admin:index' %}" style="color: blue;"><b>Welcome, {{request.user.username}}</b></a>
+            </li>
+            
+            <a class="nav-link" href="/logout/" style="color: blue;"><b>Logout</b></a>
+            {% else  %}
+
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/login/" style="color: blue;"><b>Login</b></a>
+            </li>
+           
+            
+           
+            <a class="nav-link" href="/register/" style="color: blue;"><b>Register</b></a>
+            
+            {% endif %}
+            
+        </div>
+    </div>
+</nav>

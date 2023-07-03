@@ -1,0 +1,74 @@
+
+{% extends "base.html" %}
+{% block content %} 
+
+{% load crispy_forms_tags %} 
+       
+
+<!--Register--> 
+<style>
+    form{
+        height:50%;
+        background:(rgb(112, 188, 6));
+        border-radius: 10px;
+        padding:20px;
+        color:white;
+
+    }
+    .container{
+        height:100vh;
+        width:100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border:1px solid black;
+    }
+
+    
+
+    button{
+        margin:15px 0px;
+        width:200px;
+        border-radius: 20px;
+        cursor:pointer;
+        background:pink;
+        color: blue;
+        text-align: center;
+        padding:10px 20px;
+        
+    }
+
+
+    
+
+</style>
+<h1 style="color: white; text-align: center">Register a customer</h1>
+<div class="container py-5">
+
+    
+
+
+	<form action ="" method="POST">
+
+        {%if register_form.errors%}
+
+    <p>{{register_form.errors}}</p>
+
+    {%endif%}
+		
+		{% csrf_token %}
+		 
+        <!--{{crispy}}--->
+        <!---{% for field in register_form %}--->
+        {{ form.as_p }}
+             
+            <p style="color: white;">{{field.label}}<br>{{ field }}</p>
+            
+        <!---{% endfor%}--->
+		<button type="submit" class="btn btn-primary"    onclick="return confirm('Are you sure the details provided are correct?\nYou will NOT be allowed to make modifications.') "><b>Register</b></button> <p class="text-center" style="color: white;">If you already have an account, <a href="{% url 'login' %}" style="color: pink;">login</a> instead.</p>
+	</form>
+	
+</div>
+
+
+{% endblock %}
